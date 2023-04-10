@@ -16,6 +16,11 @@ export const journalSlice = createSlice({
         // }
     },
     reducers: {
+
+        savingNewNote: (state) => {
+            state.isSaving = true;
+        },
+
         addNewEmptyNote: (state, action) => {
             state.notes.push(action.payload);
             state.isSaving = false;
@@ -26,7 +31,7 @@ export const journalSlice = createSlice({
         },
 
         setNotes: (state, action) => {
-
+            state.notes = action.payload;
         },
 
         setSaving: (state) => {
@@ -50,4 +55,5 @@ export const {
     setSaving,
     updateNote,
     deleteNoteById,
+    savingNewNote,
  } = journalSlice.actions;
