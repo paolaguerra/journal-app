@@ -7,15 +7,17 @@ import { useForm } from "../../hooks/useForm";
 import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth/thunks";
 import { AuthLayout } from "../layout/AuthLayout";
 
+const formData = {
+  email: "paola@google.com",
+  password: "123456",
+}
+
 export const LoginPage = () => {
 
   const {status, errorMessage } = useSelector( state => state.auth );
 
   const dispatch = useDispatch();
-  const { email, password, onInputChange } = useForm({
-    email: "paola@google.com",
-    password: "123456",
-  });
+  const { email, password, onInputChange } = useForm(formData);
 
   const isAuthenticating = useMemo( () => status === 'checking', [status] );
 
