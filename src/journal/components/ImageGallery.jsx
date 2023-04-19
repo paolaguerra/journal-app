@@ -1,5 +1,6 @@
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import PropTypes from 'prop-types';
 
 export const ImageGallery = ({images}) => {
 
@@ -18,3 +19,12 @@ export const ImageGallery = ({images}) => {
     </ImageList>
   );
 }
+
+ImageGallery.defaultProps = {
+  images: [],
+};
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({})
+  ),
+};
