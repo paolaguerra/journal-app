@@ -8,7 +8,7 @@ import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth
 import { AuthLayout } from "../layout/AuthLayout";
 
 const formData = {
-  email: "paola@google.com",
+  email: "hello@google.com",
   password: "123456",
 }
 
